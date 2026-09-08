@@ -19,7 +19,6 @@
 		SM0100022FE993A70072D4E8 /* SafeMeshEmergencyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = SM0100012FE993A50072D4E8 /* SafeMeshEmergencyEngine.swift */; };
 		SM0200022FE993A70072D4E8 /* SafeMeshAppIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = SM0200012FE993A50072D4E8 /* SafeMeshAppIntents.swift */; };
 		SM0300022FE993A70072D4E8 /* SafeMeshNativePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = SM0300012FE993A50072D4E8 /* SafeMeshNativePlugin.swift */; };
-		SM0400022FE993A70072D4E8 /* SafeMeshNativePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = SM0400012FE993A50072D4E8 /* SafeMeshNativePlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 		SM0100012FE993A50072D4E8 /* SafeMeshEmergencyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeMeshEmergencyEngine.swift; sourceTree = "<group>"; };
 		SM0200012FE993A50072D4E8 /* SafeMeshAppIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeMeshAppIntents.swift; sourceTree = "<group>"; };
 		SM0300012FE993A50072D4E8 /* SafeMeshNativePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeMeshNativePlugin.swift; sourceTree = "<group>"; };
-		SM0400012FE993A50072D4E8 /* SafeMeshNativePlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeMeshNativePlugin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,6 @@
 				SM0100012FE993A50072D4E8 /* SafeMeshEmergencyEngine.swift */,
 				SM0200012FE993A50072D4E8 /* SafeMeshAppIntents.swift */,
 				SM0300012FE993A50072D4E8 /* SafeMeshNativePlugin.swift */,
-				SM0400012FE993A50072D4E8 /* SafeMeshNativePlugin.m */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -175,7 +172,6 @@
 				SM0100022FE993A70072D4E8 /* SafeMeshEmergencyEngine.swift in Sources */,
 				SM0200022FE993A70072D4E8 /* SafeMeshAppIntents.swift in Sources */,
 				SM0300022FE993A70072D4E8 /* SafeMeshNativePlugin.swift in Sources */,
-				SM0400022FE993A70072D4E8 /* SafeMeshNativePlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

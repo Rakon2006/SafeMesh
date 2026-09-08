@@ -5,7 +5,19 @@ import UserNotifications
 import UIKit
 
 @objc(SafeMeshNativePlugin)
-public class SafeMeshNativePlugin: CAPPlugin, CLLocationManagerDelegate {
+public class SafeMeshNativePlugin: CAPPlugin, CAPBridgedPlugin, CLLocationManagerDelegate {
+    public let identifier = "SafeMeshNativePlugin"
+    public let jsName = "SafeMeshNative"
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "getEmergencyState", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "activateSOS", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "deactivateSOS", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "getPermissionStatus", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "openSettings", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "call112", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "callEmergencyContact", returnType: CAPPluginReturnPromise)
+    ]
+
     private var locationManager: CLLocationManager?
 
     override public func load() {

@@ -35,6 +35,8 @@ import {
   requestLocationPermission,
 } from '../services/permissions';
 
+import { emergencyEngine } from '../services/emergencyEngine';
+
 interface HomeProps {
   onNavigate: (view: string) => void;
 }
@@ -68,6 +70,18 @@ export default function Home({ onNavigate }: HomeProps) {
     return () => unsub();
   }, []);
 
+  // 1b. Subscribe to Central Emergency Engine (Siri, Widget, UI)
+  useEffect(() => {
+    const unsub = emergencyEngine.subscribe((state) => {
+      if (state === 'ACTIVE' || state === 'ACTIVATING') {
+        setSosActive(true);
+      } else if (state === 'IDLE' || state === 'ENDED') {
+        setSosActive(false);
+      }
+    });
+    return () => unsub();
+  }, []);
+
   // 2. Fetch real location if location permission is granted
   const loadLocation = useCallback(async () => {
     setIsLocating(true);
@@ -80,6 +94,27 @@ export default function Home({ onNavigate }: HomeProps) {
       setIsLocating(false);
     }
   }, []);
+
+  // 2b. Foreground Permission & Location Re-check (Section 4 requirement)
+  useEffect(() => {
+    const handleRecheck = () => {
+      refreshAllPermissions();
+      if (permissions.location === 'GRANTED') {
+        loadLocation();
+      }
+    };
+
+    window.addEventListener('focus', handleRecheck);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        handleRecheck();
+      }
+    });
+
+    return () => {
+      window.removeEventListener('focus', handleRecheck);
+    };
+  }, [permissions.location, loadLocation]);
 
   useEffect(() => {
     if (permissions.location === 'GRANTED') {
@@ -121,9 +156,8 @@ export default function Home({ onNavigate }: HomeProps) {
     }
   };
 
-  // SOS activation logic
+  // SOS activation logic — Unified with Central Engine
   const handleSosHoldComplete = () => {
-    // Check if location is missing
     if (permissions.location !== 'GRANTED' || !location || location.status !== 'LIVE') {
       setShowSosWarning(true);
     } else {
@@ -133,13 +167,13 @@ export default function Home({ onNavigate }: HomeProps) {
 
   const activateEmergencyWorkflow = () => {
     setShowSosWarning(false);
-    setSosActive(true);
     triggerHaptic([300, 100, 300, 100, 500]);
+    emergencyEngine.activateSOS('UI');
     showToast('🚨 SafeMesh Emergency SOS Broadcast Active');
   };
 
   const handleDeactivateSos = useCallback(() => {
-    setSosActive(false);
+    emergencyEngine.deactivateSOS();
     triggerHaptic(100);
     showToast('Emergency mode cancelled. You are safe.');
   }, [showToast]);
@@ -268,6 +302,7 @@ export default function Home({ onNavigate }: HomeProps) {
           location={location}
           contacts={contacts}
           onDeactivate={handleDeactivateSos}
+          onOpenContacts={() => setActiveModal('contacts')}
         />
       )}
 

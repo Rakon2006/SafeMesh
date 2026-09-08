@@ -118,6 +118,35 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose, onShowToa
             </div>
           </div>
 
+          {/* iOS Integrations & Widget Guidance (Section 15 Requirement) */}
+          <div className="settings-section">
+            <span className="settings-section-title">IOS & SIRI INTEGRATION</span>
+
+            <div className="ios-widget-promo-card">
+              <div className="promo-header">
+                <div className="promo-icon">🛡️</div>
+                <div className="promo-text">
+                  <span className="promo-title">Add SafeMesh SOS to your Home Screen</span>
+                  <span className="promo-desc">
+                    Activate emergency mode in 1 tap directly from your iPhone Home Screen or Lock Screen.
+                  </span>
+                </div>
+              </div>
+
+              <div className="widget-instructions-box">
+                <span className="instr-step">1. Touch & hold empty space on your iPhone Home Screen.</span>
+                <span className="instr-step">2. Tap the <strong>+</strong> button in the top corner.</span>
+                <span className="instr-step">3. Search for <strong>SafeMesh</strong> and select the SOS widget.</span>
+                <span className="instr-step">4. Tap <strong>Add Widget</strong>.</span>
+              </div>
+
+              <div className="siri-shortcut-tip">
+                <span className="siri-badge">Siri</span>
+                <span className="siri-phrase">"Hey Siri, activate SafeMesh"</span>
+              </div>
+            </div>
+          </div>
+
           {/* About safe mesh */}
           <div className="about-safemesh-card">
             <div className="about-header">

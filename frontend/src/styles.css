@@ -1993,6 +1993,224 @@ input:checked + .slider::before {
   box-shadow: 0 6px 20px rgba(220, 38, 38, 0.35);
 }
 
+.call-contact-btn {
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.3);
+}
+
+.share-location-btn {
+  background: linear-gradient(135deg, #2563EB, #1D4ED8);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+}
+
+.contact-unavailable-box {
+  background: #F1F5F9;
+  border: 1px dashed #CBD5E1;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.bg-gray-soft {
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.text-muted {
+  color: #64748B !important;
+}
+
+.text-muted-sub {
+  color: #94A3B8 !important;
+}
+
+.btn-config-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  background: #E2E8F0;
+  color: #334155;
+  border-radius: var(--radius-pill);
+}
+
+.btn-disabled-look {
+  opacity: 0.7;
+}
+
+.emergency-status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.status-indicator-pill {
+  background: #F8FAFC;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+}
+
+.status-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.status-val {
+  font-size: 0.70rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.val-green {
+  color: #059669;
+}
+
+.val-red {
+  color: #DC2626;
+}
+
+.val-amber {
+  color: #D97706;
+}
+
+.val-blue {
+  color: #2563EB;
+}
+
+.val-gray {
+  color: #64748B;
+}
+
+.emergency-feedback-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-card);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.feedback-safe {
+  background: #ECFDF5;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #065F46;
+}
+
+.feedback-info {
+  background: #EFF6FF;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #1E40AF;
+}
+
+/* Development 112 Safety Modal */
+.dev-safety-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 500;
+}
+
+.dev-safety-sheet {
+  background: #FFFFFF;
+  border-radius: 28px;
+  padding: 24px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.dev-safety-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #FEF2F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dev-safety-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0;
+}
+
+.dev-safety-desc {
+  font-size: 0.82rem;
+  color: #64748B;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.dev-safety-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.dev-safe-btn {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.safe-btn-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.safe-btn-desc {
+  font-size: 0.68rem;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.btn-primary-safe {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+}
+
+.btn-danger-live {
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  color: #B91C1C;
+}
+
+.btn-cancel-gate {
+  background: #F1F5F9;
+  color: #475569;
+  text-align: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 10px;
+}
+
 .sms-broadcast-btn {
   background: linear-gradient(135deg, #2563EB, #1D4ED8);
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
@@ -2841,5 +3059,90 @@ input:checked + .slider::before {
 
 .metric-status-active.pending {
   color: #F59E0B;
+}
+
+/* iOS Widget & Siri Card */
+.ios-widget-promo-card {
+  background: #F8FAFC;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.promo-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.promo-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.promo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.promo-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.promo-desc {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.widget-instructions-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.instr-step {
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.instr-step strong {
+  color: var(--text-primary);
+}
+
+.siri-shortcut-tip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #F1F5F9;
+  border-radius: var(--radius-pill);
+}
+
+.siri-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  background: #0F172A;
+  color: #FFFFFF;
+  border-radius: var(--radius-pill);
+}
+
+.siri-phrase {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1E293B;
+  font-family: monospace;
 }
 

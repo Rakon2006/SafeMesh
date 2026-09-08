@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Frontend build output
+frontend/dist/
+
+# Backend build output
+backend/dist/
+backend/build/
+
+# Environment files
+.env
+.env.*
+!.env.example
+.agents/
+.agents
+.agent/
+*.zip
+
+# Android / Gradle generated files
+android/.gradle/
+android/build/
+android/app/build/
+android/.idea/
+android/local.properties
+
+# Android generated APK/AAB files
+android/*.apk
+android/*.aab
+
+# Android signing keys / secrets
+android/*.keystore
+android/*.jks
+
+# IDE / OS
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db

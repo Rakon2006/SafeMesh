@@ -23,16 +23,18 @@ public struct ActivateSafeMeshIntent: AppIntent {
 @available(iOS 16.0, *)
 public struct SafeMeshShortcuts: AppShortcutsProvider {
     public static var appShortcuts: [AppShortcut] {
-        AppShortcut(
-            intent: ActivateSafeMeshIntent(),
-            phrases: [
-                "Activate \(.applicationName)",
-                "Start \(.applicationName)",
-                "Activate \(.applicationName) SOS",
-                "Trigger \(.applicationName)"
-            ],
-            shortTitle: "Activate SafeMesh",
-            systemImageName: "exclamationmark.shield.fill"
-        )
+        return [
+            AppShortcut(
+                intent: ActivateSafeMeshIntent(),
+                phrases: [
+                    "Activate \(.applicationName)",
+                    "Start \(.applicationName)",
+                    "Activate \(.applicationName) SOS",
+                    "Trigger \(.applicationName)"
+                ],
+                shortTitle: "Activate SafeMesh",
+                systemImageName: "exclamationmark.shield.fill"
+            )
+        ]
     }
 }
